@@ -1,0 +1,77 @@
+@use "../abstracts/color"as c;
+@use "../abstracts/size"as s;
+@use "../abstracts/font"as f;
+@use "./btn"as b;
+
+#search {
+    height: calc(100vh - 82px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .title {
+        h1 {
+            font-family: f.$header-font;
+            font-size: s.$h3_size;
+
+            a {
+                letter-spacing: 3px;
+                text-decoration: none;
+                color: c.$black;
+                font-weight: 400;
+            }
+        }
+
+        h3 {
+            text-align: center;
+            margin-top: 11px;
+            margin-bottom: 52px;
+            font-size: 20px;
+            color: c.$grey_h3_fg;
+            font-style: italic;
+        }
+    }
+
+    .bar {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        .btn_solid {
+            @include b.btn_solid(25px, c.$black, c.$bg_left_btn, 10px 15px);
+            width: 54px;
+            height: 45px;
+        }
+
+        .left {
+            // position: absolute;
+            // left: -50px;
+            border-radius: 20px 0 0 20px;
+        }
+
+        .sbar {
+            padding: 10px 15px;
+            outline: none;
+            height: 45px;
+            width: 100%;
+            // max-width: 700px;
+            // min-width: 700px;
+            border: none;
+            background-color: c.$bg_search_bar;
+
+            ::placeholder {
+                color: c.$placeholder_color;
+            }
+        }
+
+        .right {
+            // position: absolute;
+            background-color: c.$bg_right_btn;
+            border-radius: 0 20px 20px 0;
+            color: c.$white;
+        }
+    }
+}

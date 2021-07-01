@@ -1,0 +1,7 @@
+@mixin btn_solid($font-size, $color, $bg, $padding) {
+    font-size: $font-size;
+    color: $color;
+    background-color: $bg;
+    padding: $padding;
+    border: none;
+}
