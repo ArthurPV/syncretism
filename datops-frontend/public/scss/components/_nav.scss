@@ -1,0 +1,42 @@
+@use "../abstracts/color" as c;
+@use "../abstracts/size" as s;
+
+#nav {
+    background-color: c.$nav_bg;
+    display: flex;
+    flex-direction: row;
+    height: s.$nav_height;
+    padding: 0 40px 0 44px;
+
+    .left { 
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        h1 {
+            color: c.$nav_fg;
+            font-size: s.$h6_size;
+        }
+    }
+    
+    .right {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+
+        .list {
+            list-style-type: none;
+
+            .item {
+                padding-left: 9px;
+                display: inline-block;
+
+                .link {
+                    color: c.$nav_link_fg;
+                    text-decoration: none;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

@@ -5,4 +5,38 @@
   padding: 0;
 }
 
+#nav {
+  background-color: #232121;
+  display: flex;
+  flex-direction: row;
+  height: 82px;
+  padding: 0 40px 0 44px;
+}
+#nav .left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#nav .left h1 {
+  color: #FFFFFF;
+  font-size: 25px;
+}
+#nav .right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+#nav .right .list {
+  list-style-type: none;
+}
+#nav .right .list .item {
+  padding-left: 9px;
+  display: inline-block;
+}
+#nav .right .list .item .link {
+  color: #D1DEEA;
+  text-decoration: none;
+  font-size: 18px;
+}
+
 /*# sourceMappingURL=main.css.map */
