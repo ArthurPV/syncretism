@@ -34,14 +34,14 @@
     }
 
     .bar {
-        width: 40%;
+        width: 30%;
         display: flex;
         align-items: center;
         justify-content: space-between;
         position: relative;
 
         .btn_solid {
-            @include b.btn_solid(25px, c.$black, c.$bg_left_btn, 10px 15px);
+            @include b.btn_solid(15px, c.$black, c.$bg_search_bar, 10px 15px);
             width: 54px;
             height: 45px;
         }
@@ -50,6 +50,11 @@
             // position: absolute;
             // left: -50px;
             border-radius: 20px 0 0 20px;
+            cursor: pointer;
+            
+            i {
+                color: c.$color_btn;
+            }
         }
 
         .sbar {
@@ -57,13 +62,14 @@
             outline: none;
             height: 45px;
             width: 100%;
+            font-size: 18px;
             // max-width: 700px;
             // min-width: 700px;
             border: none;
             background-color: c.$bg_search_bar;
 
-            ::placeholder {
-                color: c.$placeholder_color;
+            &::placeholder {
+                color: c.$color_btn;
             }
         }
 
@@ -72,6 +78,26 @@
             background-color: c.$bg_right_btn;
             border-radius: 0 20px 20px 0;
             color: c.$white;
+        }
+    }
+
+    .filter {
+        .btn_solid {
+            @include b.btn_solid(15px, c.$black, c.$bg_search_bar, 10px 15px);
+            border-radius: 5px;
+            margin-top: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            color: c.$color_btn;
+            transition: .1s linear;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                border: 1px solid c.$border_color_hover;
+                box-shadow: .2px .2px .2px .2px c.$border_color_hover;
+            }
         }
     }
 }
