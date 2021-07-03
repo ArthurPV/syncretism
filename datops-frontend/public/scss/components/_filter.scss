@@ -1,0 +1,51 @@
+@use "../abstracts/color"as c;
+
+#filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: c.$bg_filter_section;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+
+    .top {
+        position: relative;
+
+        .btn_close {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+
+            i {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .filter {
+        .range_slider {
+            position: relative;
+            width: 100%;
+            height: 100px;
+
+            input[type="range"] {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.filter_hide {
+    display: none;
+}
+
+.filter_enable {
+    display: block;
+}

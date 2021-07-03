@@ -10,6 +10,10 @@
     align-items: center;
     flex-direction: column;
 
+    .title_hide {
+        display: none;
+    }
+
     .title {
         h1 {
             font-family: f.$header-font;
@@ -31,6 +35,10 @@
             color: c.$grey_h3_fg;
             font-style: italic;
         }
+    }
+
+    .bar_hide {
+        display: none;
     }
 
     .bar {
@@ -96,7 +104,7 @@
 
             &:hover {
                 border: 1px solid c.$border_color_hover;
-                box-shadow: .2px .2px .2px .2px c.$border_color_hover;
+                box-shadow: .2px .2px c.$border_color_hover;
             }
         }
     }
