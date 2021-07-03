@@ -54,16 +54,18 @@
 			<div class="line_decoration"></div>
 		</div>
 
+		<div class="name"><label for="max-diff">Strike to stcok difference %</label></div>
 		<div class="filter">
-			<div class="name"><label for="max-diff">Strike to stcok difference %</label></div>
-
+			<div class="values">
+				<span class="range_a">0</span>
+				<span>&dash;</span>
+				<span class="range_b">100</span>
+			</div>
 			<div class="range_slider" style='--value-a: 0; --text-value-a: "0"; --value-b: 100; --text-value-b: "100"'>
-				<input type="range" min="0" max="100" value="0"
+				<input class="range1" type="range" min="0" max="100" value="0"
 					oninput="this.parentNode.style.setProperty('--value-a',this.value); this.parentNode.style.setProperty('--text-value-a', JSON.stringify(this.value))">
-				<output></output>
-				<input type="range" min="0" max="100" value="100"
+				<input class="range2" type="range" min="0" max="100" value="100"
 					oninput="this.parentNode.style.setProperty('--value-b',this.value); this.parentNode.style.setProperty('--text-value-b', JSON.stringify(this.value))">
-				<output></output>
 				<div class='range-slider__progress'></div>
 			</div>
 		</div>

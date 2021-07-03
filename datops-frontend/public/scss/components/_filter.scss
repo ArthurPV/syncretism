@@ -1,13 +1,16 @@
 @use "../abstracts/color"as c;
+@use "./decoration" as d;
+@use "../abstracts/size" as s;
 
 #filter {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     background: c.$bg_filter_section;
-    width: 100%;
-    height: 100%;
-    padding: 10px 20px;
+    width: 25%;
+    height: calc(100% - 82px);
+    padding: 30px 30px;
+    border-radius: 10px;
 
     .top {
         position: relative;
@@ -21,22 +24,155 @@
             cursor: pointer;
 
             i {
+                color: c.$black;
                 font-size: 20px;
             }
         }
     }
 
+    .title {
+        margin-top: 40px;
+        h2 {
+            font-size: s.$h6_size;
+        }
+
+        .line_decoration {
+            margin-top: 7px;
+            @include d.line(c.$black, 2px);
+        }
+    }
+
+    .name {
+        margin-top: 21px;
+        margin-bottom: 34px;
+        label {
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+
     .filter {
-        .range_slider {
+        position: relative;
+        width: 100%;
+        height: 100px;
+
+        .values {
+            position: absolute;
+            top: -20px;
+            background-color: c.$bg_range_slider_thumb;
+            width: 100px;
             position: relative;
+            margin: auto;
+            padding: 10px 0;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 18px;
+            color: c.$white;
+
+            &:before {
+                content: "";
+                position: absolute;
+                bottom: -14px;
+                left: 0;
+                right: 0;
+                height: 0;
+                width: 0;
+                border-top: 15px solid c.$bg_range_slider_thumb;
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                margin: auto;
+            }
+        }
+        
+        .range_slider {
+            margin-top: 20px;
             width: 100%;
-            height: 100px;
+            height: 5px;
+            background-color: c.$bg_range_slider;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border-radius: 5px;
+
 
             input[type="range"] {
                 -webkit-appearance: none;
                 -moz-appearance: none;
                 appearance: none;
                 width: 100%;
+                outline: none;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                background-color: transparent;
+                pointer-events: none;
+
+                &::-webkit-slider-runnable-track {
+                    -webkit-appearance: none;
+                    height: 5px;
+                }
+
+                &::-moz-range-track {
+                    -moz-appearance: none;
+                    height: 5px;
+                }
+
+                &::-ms-track {
+                    appearance: none;
+                    height: 5px;
+                }
+
+                &::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    height: 1.3em;
+                    width: 1.3em;
+                    background-color: c.$bg_range_slider_thumb;
+                    cursor: pointer;
+                    pointer-events: auto;
+                    margin-top: -7px;
+                    border-radius: 10px;
+                }
+
+                &::-moz-range-thumb {
+                    -moz-appearance: none;
+                    height: 1.3em;
+                    width: 1.3em;
+                    background-color: c.$bg_range_slider_thumb;
+                    cursor: pointer;
+                    pointer-events: auto;
+                    border-radius: 50%;
+                    border: none;
+                }
+
+                &::-ms-thumb {
+                    appearance: none;
+                    height: 1.3em;
+                    width: 1.3em;
+                    background-color: c.$bg_range_slider_thumb;
+                    cursor: pointer;
+                    pointer-events: auto;
+                    border-radius: 50%;
+                    border: none;
+                }
+
+                &:active::-webkit-slider-thumb {
+                    background-color: c.$white;
+                    border: 3px solid c.$bg_range_slider_thumb;
+                }
+
+                &:active::-moz-range-thumb {
+                    background-color: c.$white;
+                    border: 3px solid c.$bg_range_slider_thumb;
+                }
+
+                &:active::-ms-thumb {
+                    background-color: c.$white;
+                    border: 3px solid c.$bg_range_slider_thumb;
+                }
             }
         }
     }

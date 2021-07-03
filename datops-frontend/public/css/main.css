@@ -137,12 +137,13 @@
 
 #filter {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  background: #f6f0f0;
-  width: 100%;
-  height: 100%;
-  padding: 10px 20px;
+  background: #fbfbfb;
+  width: 25%;
+  height: calc(100% - 82px);
+  padding: 30px 30px;
+  border-radius: 10px;
 }
 #filter .top {
   position: relative;
@@ -156,18 +157,139 @@
   cursor: pointer;
 }
 #filter .top .btn_close i {
+  color: #000000;
   font-size: 20px;
 }
-#filter .filter .range_slider {
+#filter .title {
+  margin-top: 40px;
+}
+#filter .title h2 {
+  font-size: 25px;
+}
+#filter .title .line_decoration {
+  margin-top: 7px;
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+}
+#filter .name {
+  margin-top: 21px;
+  margin-bottom: 34px;
+}
+#filter .name label {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+#filter .filter {
   position: relative;
   width: 100%;
   height: 100px;
+}
+#filter .filter .values {
+  position: absolute;
+  top: -20px;
+  background-color: #4d5cec;
+  width: 100px;
+  position: relative;
+  margin: auto;
+  padding: 10px 0;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  color: #FFFFFF;
+}
+#filter .filter .values:before {
+  content: "";
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  right: 0;
+  height: 0;
+  width: 0;
+  border-top: 15px solid #4d5cec;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  margin: auto;
+}
+#filter .filter .range_slider {
+  margin-top: 20px;
+  width: 100%;
+  height: 5px;
+  background-color: #f1f2f3;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 5px;
 }
 #filter .filter .range_slider input[type=range] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   width: 100%;
+  outline: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: transparent;
+  pointer-events: none;
+}
+#filter .filter .range_slider input[type=range]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  height: 5px;
+}
+#filter .filter .range_slider input[type=range]::-moz-range-track {
+  -moz-appearance: none;
+  height: 5px;
+}
+#filter .filter .range_slider input[type=range]::-ms-track {
+  appearance: none;
+  height: 5px;
+}
+#filter .filter .range_slider input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 1.3em;
+  width: 1.3em;
+  background-color: #4d5cec;
+  cursor: pointer;
+  pointer-events: auto;
+  margin-top: -7px;
+  border-radius: 10px;
+}
+#filter .filter .range_slider input[type=range]::-moz-range-thumb {
+  -moz-appearance: none;
+  height: 1.3em;
+  width: 1.3em;
+  background-color: #4d5cec;
+  cursor: pointer;
+  pointer-events: auto;
+  border-radius: 50%;
+  border: none;
+}
+#filter .filter .range_slider input[type=range]::-ms-thumb {
+  appearance: none;
+  height: 1.3em;
+  width: 1.3em;
+  background-color: #4d5cec;
+  cursor: pointer;
+  pointer-events: auto;
+  border-radius: 50%;
+  border: none;
+}
+#filter .filter .range_slider input[type=range]:active::-webkit-slider-thumb {
+  background-color: #FFFFFF;
+  border: 3px solid #4d5cec;
+}
+#filter .filter .range_slider input[type=range]:active::-moz-range-thumb {
+  background-color: #FFFFFF;
+  border: 3px solid #4d5cec;
+}
+#filter .filter .range_slider input[type=range]:active::-ms-thumb {
+  background-color: #FFFFFF;
+  border: 3px solid #4d5cec;
 }
 
 .filter_hide {
