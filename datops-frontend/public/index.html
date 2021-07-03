@@ -1,26 +1,29 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="Search for options.">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="css/main.css?v=8" rel="stylesheet" type="text/css">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="Search for options.">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="css/main.css?v=8" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Ops.Syncretism - Options Search</title>
-  </head>
-  <body>
+	<title>Ops.Syncretism - Options Search</title>
+</head>
+
+<body>
 
 	<nav id="nav">
 		<div class="left">
 			<h1>Syncretism</h1>
-		</div>	
+		</div>
 		<div class="right">
 			<ul class="list">
-				<li class="item"><a href="https://github.com/Tyruiop/syncretism" class="link" target="_blank">Github</a></li>
-				<li class="item"><a href="/api.html" class="link" target="_blank">API</a></li>
+				<li class="item"><a href="https://github.com/Tyruiop/syncretism" class="link" target="_blank">Github</a>
+				</li>
+				<li class="item"><a href="api.html" class="link" target="_blank">API</a></li>
 				<li class="item"><a href="https://discord.gg/qBWD5Sus3d" class="link" target="_blank">Discord</a></li>
 				<li class="item"><a href="mailto:contact@syncretism.io" class="link" target="_blank">Contact</a></li>
-			</ul>	
+			</ul>
 		</div>
 	</nav>
 
@@ -31,16 +34,42 @@
 		</div>
 
 		<div class="bar">
-			<button class="btn_solid left"><i class="fas fa-search"></i></button>	
+			<button class="btn_solid left"><i class="fas fa-search"></i></button>
 			<input class="sbar" name="search_bar" type="text" placeholder="Search (not work)">
 			<button id="status" class="btn_solid right"></button>
 		</div>
 
 		<div class="filter">
-			<button class="btn_solid filter">Filter</button>
+			<button class="btn_solid">Filter</button>
 		</div>
 	</section>
-    <!-- <div class="menu">
+
+	<div id="filter" class="filter_hide">
+		<div class="top">
+			<button class="btn_close"><i class="fas fa-times"></i></button>
+		</div>
+
+		<div class="title">
+			<h2>Filters</h2>
+			<div class="line_decoration"></div>
+		</div>
+
+		<div class="filter">
+			<div class="name"><label for="max-diff">Strike to stcok difference %</label></div>
+
+			<div class="range_slider" style='--value-a: 0; --text-value-a: "0"; --value-b: 100; --text-value-b: "100"'>
+				<input type="range" min="0" max="100" value="0"
+					oninput="this.parentNode.style.setProperty('--value-a',this.value); this.parentNode.style.setProperty('--text-value-a', JSON.stringify(this.value))">
+				<output></output>
+				<input type="range" min="0" max="100" value="100"
+					oninput="this.parentNode.style.setProperty('--value-b',this.value); this.parentNode.style.setProperty('--text-value-b', JSON.stringify(this.value))">
+				<output></output>
+				<div class='range-slider__progress'></div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- <div class="menu">
       <div id="status" class="m left"></div>
       <p class="m right">
 	<a href="https://github.com/Tyruiop/syncretism" target="_blank">Github</a>
@@ -318,10 +347,13 @@
 	</div>
       </div>
     </main> -->
-    
-    <div id="app"></div>
 
-    <div class="footer"></div>
-    <script src="/js/main.js"></script>
-  </body>
+	<div id="app"></div>
+
+	<div class="footer"></div>
+	<script src="/js/main.js"></script>
+	<script src="js/show_filter.js"></script>
+	<script src="js/range_slider.js"></script>
+</body>
+
 </html>
